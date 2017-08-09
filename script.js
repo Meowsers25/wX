@@ -28,7 +28,7 @@ $(document).ready(function(){
             console.log(Math.round(fahrenheit));
             console.log(location);
             console.log(weather);
-            var output = "<p>Your current weather is " + weather + "<br>The temperature is " + Math.round(fahrenheit) + "</p>";
+            var output = "<p>Your current weather is " + weather + "<br>The temperature is <span id='toggle'>" + Math.round(fahrenheit) + "</span></p>";
             console.log(output);
             $("#weather").html(output);
 
