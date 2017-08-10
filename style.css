@@ -1,0 +1,14 @@
+body {
+    color: blue;
+}
+#weather {
+   text-align: center;
+}
+#toggle {
+    text-align: center;
+}
+button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

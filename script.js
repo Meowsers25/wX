@@ -1,6 +1,8 @@
 $(document).ready(function(){
     var lat = 0.0;
     var long = 0.0;
+    var tempToggle = true;
+    
 
     navigator.geolocation.getCurrentPosition(function(position) {
         console.log(position.coords.latitude, position.coords.longitude);
@@ -25,16 +27,43 @@ $(document).ready(function(){
             var location = response.name;
             var fahrenheit = response.main.temp * (9/5) - 459.67;
             var celsius = response.main.temp - 273.15;
+            
             console.log(Math.round(fahrenheit));
+            console.log(Math.round)
             console.log(location);
             console.log(weather);
-            var output = "<p>Your current weather is " + weather + "<br>The temperature is <span id='toggle'>" + Math.round(fahrenheit) + "</span></p>";
+            var output = "<p>Your current weather is " + weather + "</p>";
             console.log(output);
             $("#weather").html(output);
 
-            $("#celsius").on('click', function(){
-                $("#weather").toggle(celsius);
+            $("#toggle").html(Math.round(fahrenheit));
+
+            $("#celsius").click(function(){
+                if(tempToggle=false) {
+                    $("#toggle").html(Math.round(celsius));
+                    tempToggle = true;
+                } else {
+                    $("#toggle").html(Math.round(fahrenheit));
+                    tempToggle = false;
+                }
             });
+
+
+
+            // $("celsius").on('click', function(){
+            // $("#toggle").toggle(function() {
+            //     $(this).html(Math.round(fahrenheit));
+            // },
+            // function() {
+            //     $(this).html(Math.round(celsius));
+            // }
+            // );
+            // });
+            // $("#celsius").on('click', function(){
+            //     $("#celsius").toggle(function() {
+            //         ("#toggle").html(Math.round(celsius));
+            //     });
+            // });
         }
     });
 
