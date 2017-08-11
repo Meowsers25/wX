@@ -11,11 +11,11 @@ $(document).ready(function () {
         console.log(position.coords.latitude, position.coords.longitude);
         lat = position.coords.latitude;
         long = position.coords.longitude;
-        dammit();
+        delay();
     });
 
 
-    function dammit() {
+    function delay() {
         var url = "http://api.openweathermap.org/data/2.5/weather";
         var data = {
             lat: lat,
@@ -44,6 +44,9 @@ $(document).ready(function () {
                 $("#weather").html(output);
                
                 $("#toggle").html('Current temperature: ' + Math.round(fahrenheit)+ 'F');
+
+                var iconInsert = "http://openweathermap.org/img/w/" + icon + ".png";
+                $("#weather").prepend("<img src=" + iconInsert + ">");
             }
         });
     }
