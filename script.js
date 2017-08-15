@@ -20,7 +20,7 @@ $(document).ready(function () {
         var data = {
             lat: lat,
             lon: long,
-            appid: key
+            appid: key //add yoour API key here
         };
 
         $.ajax({
